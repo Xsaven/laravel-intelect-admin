@@ -1,6 +1,6 @@
 {
     "name": "xsaven/laravel-intelect-admin",
-    "description": "Laravel-IDE Admin Manager.",
+    "description": "Laravel Intelect Admin Manager.",
     "keywords": ["laravel", "intelect", "admin", "manager", "xsaven"],
     "license": "MIT",
     "version": "1.0.0",
