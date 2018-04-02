@@ -121,4 +121,4 @@ Other
 
 License
 ------------
-`Laravel-Intelect Admin` is licensed under [The MIT License (MIT)](LICENSE).
+`Laravel Intelect Admin` is licensed under [The MIT License (MIT)](LICENSE).
