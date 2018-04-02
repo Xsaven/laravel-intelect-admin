@@ -1,0 +1,9 @@
+<?php
+
+use Faker\Generator as Faker;
+
+$factory->define(DummyNamespace\DummyClass::class, function (Faker $faker) {
+    return [
+        DummyFakerArray
+    ];
+});

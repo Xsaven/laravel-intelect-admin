@@ -1,0 +1,58 @@
+{
+    "name": "xsaven/laravel-intelect-admin",
+    "description": "Laravel-IDE Admin Manager.",
+    "keywords": ["laravel", "intelect", "admin", "manager", "xsaven"],
+    "license": "MIT",
+    "version": "1.0.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Xsaven",
+            "email": "gms.sw.xsaven@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": "~5.5",
+        "illuminate/support": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x|5.5.x|5.6.x",
+        "illuminate/translation": "5.0.x|5.1.x|5.2.x|5.3.x|5.4.x|5.5.x|5.6.x",
+        "illuminate/console": "^5.1",
+        "illuminate/database": "^5.1",
+        "illuminate/filesystem": "^5.1",
+        "illuminate/routing": "^5.1",
+        "illuminate/view": "^5.1",
+        "symfony/finder": "^2.7|^3.0|^4.0",
+        "webmozart/glob": "^4.1",
+        "guzzlehttp/guzzle": "~6.0",
+        "composer-plugin-api": "^1.1",
+        "hassankhan/config": "^0.10.0",
+        "symfony/yaml": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lia\\": "src/",
+            "Help\\": "src/Helpers/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "prefer-stable": true,
+    "extra": {
+        "class": ":Lia\\Addons\\Modules\\LaravelModuleInstallerPlugin",
+        "laravel": {
+            "providers": [
+                "Lia\\LaravelIntelectAdminProvider",
+                "Lia\\Addons\\TranslationManager\\ManagerServiceProvider",
+                "Lia\\Addons\\Modules\\LaravelModulesServiceProvider",
+                "Lia\\Addons\\Themes\\Providers\\ThemevelServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Lia\\Facades\\Admin",
+                "Module": "Nwidart\\Modules\\Facades\\Module",
+                "Theme": "Lia\\Addons\\Themes\\Facades\\Theme"
+            }
+        }
+    }
+}
