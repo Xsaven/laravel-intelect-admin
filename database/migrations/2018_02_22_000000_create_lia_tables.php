@@ -47,9 +47,6 @@ class CreateLiaTables extends Migration
             $table->string('title', 50);
             $table->string('icon', 50);
             $table->string('uri', 50)->nullable();
-            $table->string('type', 50);
-            $table->string('hotkey', 50)->nullable();
-
             $table->timestamps();
         });
 

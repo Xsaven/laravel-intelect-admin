@@ -1,0 +1,16 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Http\Controllers\Controller;
+use Lia\Facades\Admin;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        Admin::adminVariables();
+        Admin::js(asset('vendor/lia/lia.js'));
+        return view('lia::index');
+    }
+}

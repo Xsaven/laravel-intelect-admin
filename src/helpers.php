@@ -1,6 +1,4 @@
 <?php
-require __DIR__ . '/layout_helpers.php';
-
 if (!function_exists('admin_path')) {
 
     /**

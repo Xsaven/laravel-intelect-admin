@@ -40,6 +40,7 @@ class LaravelIntelectAdminProvider extends ServiceProvider
     protected $middlewareGroups = [
         'admin' => [
             'admin.auth',
+            'admin.pjax',
             'admin.log',
             'admin.bootstrap',
             'admin.permission',
