@@ -2,6 +2,8 @@
 
 namespace Lia\Auth\Database;
 
+use Lia\Traits\AdminBuilder;
+use Lia\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\DB;
  */
 class Menu extends Model
 {
+    use AdminBuilder, ModelTree {
+        ModelTree::boot as treeBoot;
+    }
 
     /**
      * The attributes that are mass assignable.

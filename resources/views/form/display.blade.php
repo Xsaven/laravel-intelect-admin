@@ -8,7 +8,7 @@
             </div><!-- /.box-body -->
         </div>
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

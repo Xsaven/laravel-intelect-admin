@@ -4,11 +4,11 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         <input type="text" class="{{$class}}" name="{{$name}}" data-from="{{ old($column, $value) }}" {!! $attributes !!} />
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

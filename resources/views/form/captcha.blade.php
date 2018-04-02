@@ -4,7 +4,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         <div class="input-group" style="width: 250px;">
 
@@ -14,7 +14,7 @@
 
         </div>
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

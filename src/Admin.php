@@ -19,6 +19,10 @@ use Lia\Addons\TranslationManager\Models\Translation;
  */
 class Admin
 {
+    /**
+     * @var Navbar
+     */
+    protected $navbar;
 
     /**
      * @var array
@@ -163,6 +167,16 @@ class Admin
     }
 
     /**
+     * Left sider-bar menu.
+     *
+     * @return array
+     */
+    public function menu()
+    {
+        return (new Menu())->toTree();
+    }
+
+    /**
      * Get admin title.
      *
      * @return Config
@@ -180,6 +194,36 @@ class Admin
     public function user()
     {
         return Auth::guard('admin')->user();
+    }
+
+    /**
+     * Set navbar.
+     *
+     * @param Closure|null $builder
+     *
+     * @return Navbar
+     */
+    public function navbar(Closure $builder = null)
+    {
+        if (is_null($builder)) {
+            return $this->getNavbar();
+        }
+
+        call_user_func($builder, $this->getNavbar());
+    }
+
+    /**
+     * Get navbar object.
+     *
+     * @return \Lia\Widgets\Navbar
+     */
+    public function getNavbar()
+    {
+        if (is_null($this->navbar)) {
+            $this->navbar = new Navbar();
+        }
+
+        return $this->navbar;
     }
 
     public function adminVariables(){
@@ -240,10 +284,22 @@ EOT;
         ];
 
         Route::group($attributes, function ($router) {
-            $router->get('/', 'LiaController@index')->name('admin.index');
-            $router->get('auth/login', 'AuthController@getLogin')->name('admin.login.index');
-            $router->post('auth/login', 'AuthController@postLogin')->name('admin.login.post');
-            $router->get('auth/logout', 'AuthController@getLogout')->name('admin.login.logout');
+            /* @var \Illuminate\Routing\Router $router */
+            $router->group([], function ($router) {
+
+                /* @var \Illuminate\Routing\Router $router */
+                $router->resource('auth/users', 'UserController');
+                $router->resource('auth/roles', 'RoleController');
+                $router->resource('auth/permissions', 'PermissionController');
+                $router->resource('auth/menu', 'MenuController', ['except' => ['create']]);
+                $router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']]);
+            });
+
+            $router->get('auth/login', 'AuthController@getLogin');
+            $router->post('auth/login', 'AuthController@postLogin');
+            $router->get('auth/logout', 'AuthController@getLogout');
+            $router->get('auth/setting', 'AuthController@getSetting');
+            $router->put('auth/setting', 'AuthController@putSetting');
         });
     }
 

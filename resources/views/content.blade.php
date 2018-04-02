@@ -1,4 +1,4 @@
-@extends('admin::index')
+@extends('lia::index')
 
 @section('content')
     <section class="content-header">
@@ -38,10 +38,10 @@
 
     <section class="content">
 
-        @include('admin::partials.error')
-        @include('admin::partials.success')
-        @include('admin::partials.exception')
-        @include('admin::partials.toastr')
+        @include('lia::partials.error')
+        @include('lia::partials.success')
+        @include('lia::partials.exception')
+        @include('lia::partials.toastr')
 
         {!! $content !!}
 

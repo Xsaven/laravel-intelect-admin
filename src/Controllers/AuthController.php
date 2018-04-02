@@ -2,13 +2,16 @@
 
 namespace Lia\Controllers;
 
+use Lia\Auth\Database\Administrator;
+use Lia\Facades\Admin;
+use Lia\Form;
+use Lia\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Lia\Facades\Admin;
 
 class AuthController extends Controller
 {
@@ -22,14 +25,6 @@ class AuthController extends Controller
         if (!Auth::guard('admin')->guest()) {
             return redirect(config('lia.route.prefix'));
         }
-
-        Admin::css(asset('vendor/lia/css/webix/contrast.css'));
-        Admin::css(asset('vendor/lia/css/bootstrap/css/bootstrap.min.css'));
-        Admin::css(asset('vendor/lia/css/layout.css'));
-        Admin::css(asset('vendor/lia/css/AdminLTE.min.css'));
-        Admin::css(asset('vendor/lia/css/goldenlayout/goldenlayout-base.css'));
-        Admin::css(asset('vendor/lia/css/goldenlayout/goldenlayout-dark-theme.css'));
-        Admin::js('http://cdn.webix.com/edge/webix.js');
 
         return view('lia::login');
     }
@@ -52,11 +47,12 @@ class AuthController extends Controller
         }
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            session(['cd_base_path' => base_path()]);
-            return response(['redirect' => config('lia.route.prefix')], 200);
+            admin_toastr(trans('admin.login_successful'));
+
+            return redirect()->intended(config('lia.route.prefix'));
         }
 
-        return response(['username' => $this->getFailedLoginMessage()], 401);
+        return Redirect::back()->withInput()->withErrors(['username' => $this->getFailedLoginMessage()]);
     }
 
     /**
@@ -71,6 +67,71 @@ class AuthController extends Controller
         session()->forget('url.intented');
 
         return redirect(config('lia.route.prefix'));
+    }
+
+    /**
+     * User setting page.
+     *
+     * @return mixed
+     */
+    public function getSetting()
+    {
+        return Admin::content(function (Content $content) {
+            $content->header(trans('admin.user_setting'));
+            $form = $this->settingForm();
+            $form->tools(
+                function (Form\Tools $tools) {
+                    $tools->disableBackButton();
+                    $tools->disableListButton();
+                }
+            );
+            $content->body($form->edit(Admin::user()->id));
+        });
+    }
+
+    /**
+     * Update user setting.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function putSetting()
+    {
+        return $this->settingForm()->update(Admin::user()->id);
+    }
+
+    /**
+     * Model-form for user setting.
+     *
+     * @return Form
+     */
+    protected function settingForm()
+    {
+        return Administrator::form(function (Form $form) {
+            $form->display('username', trans('admin.username'));
+            $form->text('name', trans('admin.name'))->rules('required');
+            $form->image('avatar', trans('admin.avatar'));
+            $form->password('password', trans('admin.password'))->rules('confirmed|required');
+            $form->password('password_confirmation', trans('admin.password_confirmation'))->rules('required')
+                ->default(function ($form) {
+                    return $form->model()->password;
+                });
+
+            $form->setAction(admin_base_path('auth/setting'));
+
+            $form->ignore(['password_confirmation']);
+
+            $form->saving(function (Form $form) {
+                if ($form->password && $form->model()->password != $form->password) {
+                    $form->password = bcrypt($form->password);
+                }
+            });
+
+            $form->saved(function () {
+                admin_toastr(trans('admin.update_succeeded'));
+
+                return redirect(admin_base_path('auth/setting'));
+            });
+        });
     }
 
     /**

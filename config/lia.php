@@ -3,14 +3,24 @@
 return [
 
     /*
-     * LaravelIDE-admin html title.
+     * Laravel Intelect Admin html title.
      */
     'title' => 'Admin',
 
     /*
-     * LaravelIDE-admin name.
+     * Laravel Intelect Admin name.
      */
-    'name' => 'LaravelIDE-Admin',
+    'name' => 'Laravel Intelect Admin',
+
+    /*
+     * Logo in admin panel header.
+     */
+    'logo' => '<b>LIntelect</b> Admin',
+
+    /*
+     * Mini-logo in admin panel header.
+     */
+    'logo-mini' => '<b>LIA</b>',
 
     /*
      * Route configuration.
@@ -25,12 +35,12 @@ return [
     ],
 
     /*
-     * LaravelIDE-admin install directory.
+     * Laravel Intelect Admin install directory.
      */
     'directory' => app_path('Admin'),
 
     /*
-     * LaravelIDE-admin modules install directory.
+     * Laravel Intelect Admin modules install directory.
      */
     'modules' =>  base_path('Modules'),
 
@@ -40,7 +50,7 @@ return [
     'secure' => false,
 
     /*
-     * LaravelIDE-admin auth setting.
+     * Laravel Intelect Admin auth setting.
      */
     'auth' => [
         'guards' => [
@@ -59,7 +69,7 @@ return [
     ],
 
     /*
-     * LaravelIDE-admin upload setting.
+     * Laravel Intelect Admin upload setting.
      */
     'upload' => [
 
@@ -72,7 +82,7 @@ return [
     ],
 
     /*
-     * LaravelIDE-admin database setting.
+     * Laravel Intelect Admin database setting.
      */
     'database' => [
 
@@ -101,13 +111,12 @@ return [
         'role_users_table'       => 'admin_role_users',
         'role_permissions_table' => 'admin_role_permissions',
         'role_menu_table'        => 'admin_role_menu',
-        'role_menu_table'        => 'admin_role_menu',
         'reporter_table'         => 'laravel_exceptions',
         'translate_manager'      => 'translations',
     ],
 
     /*
-     * By setting this option to open or close operation log in LaravelIDE-admin.
+     * By setting this option to open or close operation log in Laravel Intelect Admin.
      */
     'operation_log' => [
 
@@ -123,6 +132,27 @@ return [
             'admin/auth/logs*',
         ],
     ],
+
+    /*
+     * @see https://adminlte.io/docs/2.4/layout
+     */
+    'skin' => 'skin-blue-light',
+
+    /*
+    |---------------------------------------------------------|
+    |LAYOUT OPTIONS | fixed                                   |
+    |               | layout-boxed                            |
+    |               | layout-top-nav                          |
+    |               | sidebar-collapse                        |
+    |               | sidebar-mini                            |
+    |---------------------------------------------------------|
+     */
+    'layout' => ['fixed', 'layout-boxed'],
+
+    /*
+     * Version displayed in footer.
+     */
+    'version' => '1.5.x-dev',
 
     /*
      * Settings for extensions.

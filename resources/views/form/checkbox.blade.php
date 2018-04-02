@@ -4,7 +4,7 @@
 
     <div class="{{$viewClass['field']}}" id="{{$id}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         @foreach($options as $option => $label)
             @if(!$inline)<div class="checkbox">@endif
@@ -16,7 +16,7 @@
 
         <input type="hidden" name="{{$name}}[]">
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

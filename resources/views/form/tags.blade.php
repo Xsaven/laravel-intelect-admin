@@ -4,7 +4,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         <select class="form-control {{$class}}" style="width: 100%;" name="{{$name}}[]" multiple="multiple" data-placeholder="{{ $placeholder }}" {!! $attributes !!} >
             @foreach($value as $select)
@@ -13,7 +13,7 @@
         </select>
         <input type="hidden" name="{{$name}}[]" />
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

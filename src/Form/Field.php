@@ -183,7 +183,7 @@ class Field implements Renderable
      *
      * @var bool
      */
-    protected $horizontal = false;
+    protected $horizontal = true;
 
     /**
      * Field constructor.
@@ -713,16 +713,6 @@ class Field implements Renderable
     public function disableHorizontal()
     {
         $this->horizontal = false;
-
-        return $this;
-    }
-
-    /**
-     * @return $this
-     */
-    public function enableHorizontal()
-    {
-        $this->horizontal = true;
 
         return $this;
     }

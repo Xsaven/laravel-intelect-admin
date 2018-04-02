@@ -4,7 +4,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         <input type="hidden" name="{{$name}}"/>
 
@@ -25,7 +25,7 @@
             @endif
         </select>
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

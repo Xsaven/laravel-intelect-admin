@@ -26,10 +26,9 @@
 </style>
 
 <div class="title">
-    Laravel-admin
+    Laravel Intelect Admin
 </div>
 <div class="links">
-    <a href="https://github.com/z-song/laravel-admin" target="_blank">Github</a>
-    <a href="http://laravel-admin.org/docs"  target="_blank">Documentation</a>
-    <a href="http://laravel-admin.org/demo"  target="_blank">Demo</a>
+    <a href="https://github.com/Xsaven/laravel-intelect-admin" target="_blank">Github</a>
+    <a href="https://xsaven.github.io/laravel-intelect-admin/"  target="_blank">Documentation</a>
 </div>

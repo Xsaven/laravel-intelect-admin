@@ -17,7 +17,7 @@
         <div class="box-body">
 
             @if(!$tabObj->isEmpty())
-                @include('admin::form.tab', compact('tabObj'))
+                @include('lia::form.tab', compact('tabObj'))
             @else
                 <div class="fields-group">
 
@@ -39,7 +39,7 @@
         <!-- /.box-body -->
         <div class="box-footer">
 
-            @if( ! $form->isMode(\Encore\Admin\Form\Builder::MODE_VIEW)  || ! $form->option('enableSubmit'))
+            @if( ! $form->isMode(\Lia\Form\Builder::MODE_VIEW)  || ! $form->option('enableSubmit'))
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @endif
             <div class="col-md-{{$width['label']}}">

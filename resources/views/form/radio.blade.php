@@ -4,7 +4,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin::form.error')
+        @include('lia::form.error')
 
         @foreach($options as $option => $label)
             @if(!$inline)<div class="radio">@endif
@@ -14,7 +14,7 @@
             @if(!$inline)</div>@endif
         @endforeach
 
-        @include('admin::form.help-block')
+        @include('lia::form.help-block')
 
     </div>
 </div>

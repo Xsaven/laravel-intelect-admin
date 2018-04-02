@@ -69,7 +69,7 @@ class LaravelIntelectAdminProvider extends ServiceProvider
             $this->publishes([__DIR__.'/../config' => config_path()], 'lia-config');
             $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang')], 'lia-lang');
             $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'lia-migrations');
-            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor')], 'lia-assets');
+            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/lia')], 'lia-assets');
         }
     }
 

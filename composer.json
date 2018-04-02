@@ -3,7 +3,7 @@
     "description": "Laravel Intelect Admin Manager.",
     "keywords": ["laravel", "intelect", "admin", "manager", "xsaven"],
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "project",
     "authors": [
         {
@@ -27,7 +27,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "composer-plugin-api": "^1.1",
         "hassankhan/config": "^0.10.0",
-        "symfony/yaml": "^3.3"
+        "symfony/yaml": "^3.3",
+        "symfony/dom-crawler": "~3.1"
     },
     "autoload": {
         "psr-4": {
