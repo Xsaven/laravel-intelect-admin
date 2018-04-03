@@ -16,6 +16,7 @@ class IlluminateAuthAdapter implements AuthInterface
      */
     public function __construct(AuthManager $auth)
     {
+        $auth->setDefaultDriver('admin');
         $this->auth = $auth;
     }
 
