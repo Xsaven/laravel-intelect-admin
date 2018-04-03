@@ -44,6 +44,11 @@ class AuthController extends Controller
         return response()->json(compact('token'));
     }
 
+    public function configs(Request $request)
+    {
+        return Admin::adminVariables();
+    }
+
     /**
      * Login page.
      *

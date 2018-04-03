@@ -3,12 +3,12 @@
 $attributes = [
     'prefix'     => config('lia.route.prefix'),
     'namespace'  => 'Lia\Controllers',
-    'middleware' => config('lia.route.middleware'),
+    'middleware' => ['api', 'jwt.auth'],
 ];
 
 Route::group($attributes, function ($router) {
 
-
+    $router->post('get/configs', 'AuthController@configs');
 
     $router->group(['prefix' => 'module', 'as' => 'mod.', 'namespace' => 'ModulesControllers'], function () {
         Route::get('list', 'ListController@index')->name('list');

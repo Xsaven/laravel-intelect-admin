@@ -227,47 +227,18 @@ class Admin
     }
 
     public function adminVariables(){
-        Admin::css(asset('vendor/lia/css/nprogress/nprogress.css'));
-        Admin::css(asset('vendor/lia/css/terminal/terminal.css'));
-        Admin::css(asset('vendor/lia/css/filemanager/filemanager.css'));
-        Admin::css(asset('vendor/lia/css/webix/contrast.css'));
-        Admin::css(asset('vendor/lia/css/bootstrap/css/bootstrap.min.css'));
-        Admin::css(asset('vendor/lia/css/layout.css'));
-        Admin::css(asset('vendor/lia/css/AdminLTE.min.css'));
-        Admin::css(asset('vendor/lia/css/goldenlayout/goldenlayout-base.css'));
-        Admin::css(asset('vendor/lia/css/goldenlayout/goldenlayout-dark-theme.css'));
-        Admin::css(asset('vendor/lia/bootstrap3-editable/css/bootstrap-editable.css'));
-
-        Admin::css(asset('vendor/lia/css/loadl.css'));
-
-        Admin::js(asset('vendor/lia/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js'));
-        Admin::js(asset('vendor/lia/AdminLTE/bootstrap/js/bootstrap.min.js'));
-
         $routeCollection = \Route::getRoutes(); $routes = []; foreach ($routeCollection as $value) { if(!empty($value->getName())) $routes[$value->getName()] = str_replace('?','',$value->uri()); }
-        $routes = json_encode($routes);
-        $prefix = config('lia.route.prefix');
-        $admin = json_encode($this->user()->toArray());
-        $csrf_token = csrf_token();
-        $adminLang = json_encode(trans('admin'));
-        $adminCfg = json_encode(config('lia'));
-        $locales = array_values(array_unique(array_merge([config('app.locale')], Translation::groupBy('locale')->pluck('locale')->toArray())));
-        $locales = json_encode($locales);
-        $defaultLocale = config('app.locale');
+        $cfg = [
+            'routList'      => $routes,
+            'admin'         => $this->user()->toArray(),
+            '__'            => trans('admin'),
+            'cfg'           => config('lia'),
+            'adminPrefix'   => config('lia.route.prefix'),
+            'locales'       => array_values(array_unique(array_merge([config('app.locale')], Translation::groupBy('locale')->pluck('locale')->toArray()))),
+            'defaultLocale' => config('app.locale')
+        ];
 
-        $script = <<<EOT
-                
-        function LA() {}
-        LA.token = "{$csrf_token}";
-        var routList = {$routes};
-        window.admin = {$admin};
-        window.__ = {$adminLang};
-        window.cfg = {$adminCfg};
-        window.adminPrefix = '{$prefix}';
-        window.locales = '{$locales}';
-        window.defaultLocale = '{$defaultLocale}';
-EOT;
-
-        $this->script($script);
+        return json_encode($cfg);
     }
 
     /**

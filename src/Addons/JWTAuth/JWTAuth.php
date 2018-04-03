@@ -113,7 +113,6 @@ class JWTAuth
     public function authenticate($token = false)
     {
         $id = $this->getPayload($token)->get('sub');
-
         if (! $this->auth->byId($id)) {
             return false;
         }
@@ -191,7 +190,7 @@ class JWTAuth
     public function parseToken($method = 'bearer', $header = 'authorization', $query = 'token')
     {
         if (! $token = $this->parseAuthHeader($header, $method)) {
-            if (! $token = $this->request->query($query, false)) {
+            if (! $token = $this->request->{$query}) {
                 throw new JWTException('The token could not be parsed from the request', 400);
             }
         }
