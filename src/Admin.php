@@ -277,6 +277,12 @@ EOT;
      */
     public function registerAuthRoutes()
     {
+        Route::group(['prefix' => config('lia.route.prefix'), 'namespace' => 'Lia\Controllers', 'middleware' => 'api'], function($router){
+            /* @var \Illuminate\Routing\Router $router */
+
+            $router->get('auth/jwt', 'AuthController@jwt');
+        });
+
         $attributes = [
             'prefix'     => config('lia.route.prefix'),
             'namespace'  => 'Lia\Controllers',

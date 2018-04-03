@@ -8,6 +8,8 @@ $attributes = [
 
 Route::group($attributes, function ($router) {
 
+
+
     $router->group(['prefix' => 'module', 'as' => 'mod.', 'namespace' => 'ModulesControllers'], function () {
         Route::get('list', 'ListController@index')->name('list');
         Route::post('list', 'ListController@create')->name('list.create');

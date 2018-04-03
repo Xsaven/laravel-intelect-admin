@@ -19,7 +19,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the LaravelIDE-admin package';
+    protected $description = 'Install the Laravel Intelect Admin package';
 
     /**
      * Install directory.
@@ -38,6 +38,9 @@ class InstallCommand extends Command
         $this->initDatabase();
 
         $this->initAdminDirectory();
+
+        $this->call('vendor:publish', ['--provider' => \Lia\Addons\JWTAuth\Providers\JWTAuthServiceProvider::class]);
+        $this->call('jwt:generate');
     }
 
     /**

@@ -12,9 +12,38 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use JWTAuth;
+use Lia\Addons\JWTAuth\Exceptions\JWTException;
 
 class AuthController extends Controller
 {
+    public function jwt(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+
+        $validator = Validator::make($credentials, [
+            'username' => 'required', 'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+
+        try {
+            if ($user = Auth::guard('admin')->attempt($credentials)) {
+                $token = JWTAuth::fromUser(Admin::user());
+            }else{
+                return response()->json(['error' => 'Invalid credentials']);
+            }
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+
+        // all good so return the token
+        return response()->json(compact('token'));
+    }
+
     /**
      * Login page.
      *

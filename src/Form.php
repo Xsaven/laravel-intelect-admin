@@ -522,8 +522,9 @@ class Form
         // Handle validation errors.
         if ($validationMessages = $this->validationMessages($data)) {
             if (!$isEditable) {
-                $name = str_replace('update','edit',\Route::currentRouteName());
-                return redirect()->route($name, [explode('.', $name)[0] => $id])->withInput()->withErrors($validationMessages);
+                //$name = str_replace('update','edit',\Route::currentRouteName());
+                //return redirect()->route($name, [explode('.', $name)[0] => $id])->withInput()->withErrors($validationMessages);
+                return back()->withInput()->withErrors($validationMessages);
             } else {
                 return response()->json(['errors' => array_dot($validationMessages->getMessages())], 422);
             }

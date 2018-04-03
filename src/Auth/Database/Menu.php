@@ -76,6 +76,8 @@ class Menu extends Model
      */
     protected static function boot()
     {
+        static::treeBoot();
+
         static::deleting(function ($model) {
             $model->roles()->detach();
         });
