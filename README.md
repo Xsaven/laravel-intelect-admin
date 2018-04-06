@@ -6,12 +6,14 @@ Requirements
  - Laravel >= 5.5.0
  - Fileinfo PHP Extension
 
-Screenshots
+Screenshots soft
 ------------
 
 ![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-soft-filemanager.jpg)
 ------------
 ![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-soft-module.jpg)
+
+Screenshots admin
 ------------
 ![LIA-Admin](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-admin.jpg)
 
