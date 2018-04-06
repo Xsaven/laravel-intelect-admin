@@ -3,7 +3,7 @@
     "description": "Laravel Intelect Admin Manager.",
     "keywords": ["laravel", "intelect", "admin", "manager", "xsaven"],
     "license": "MIT",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "type": "project",
     "authors": [
         {
@@ -53,13 +53,11 @@
                 "Lia\\LaravelIntelectAdminProvider",
                 "Lia\\Addons\\TranslationManager\\ManagerServiceProvider",
                 "Lia\\Addons\\Modules\\LaravelModulesServiceProvider",
-                "Lia\\Addons\\Themes\\Providers\\ThemevelServiceProvider",
                 "Lia\\Addons\\JWTAuth\\Providers\\JWTAuthServiceProvider"
             ],
             "aliases": {
                 "Admin": "Lia\\Facades\\Admin",
                 "Module": "Lia\\Addons\\Modules\\Facades\\Module",
-                "Theme": "Lia\\Addons\\Themes\\Facades\\Theme",
                 "JWTAuth": "Lia\\Addons\\JWTAuth\\Facades\\JWTAuth",
                 "JWTFactory": "Lia\\Addons\\JWTAuth\\Facades\\JWTFactory"
             }

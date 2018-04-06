@@ -31,7 +31,7 @@ class LaravelIntelectAdminProvider extends ServiceProvider
         'admin.permission' => \Lia\Middleware\Permission::class,
         'admin.bootstrap'  => \Lia\Middleware\Bootstrap::class,
         'jwt.auth'         => \Lia\Addons\JWTAuth\Middleware\GetUserFromToken::class,
-        'jwt.refresh'      => \Lia\Addons\JWTAuth\Middleware\RefreshToken::class,
+        'jwt.refresh'      => \Lia\Addons\JWTAuth\Middleware\RefreshToken::class
     ];
 
     /**

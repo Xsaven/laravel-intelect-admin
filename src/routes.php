@@ -17,11 +17,6 @@ Route::group($attributes, function ($router) {
         Route::match(['post','get'], 'ide', 'IdeController@cmd')->name('ide.cmd');
     });
 
-    $router->group(['prefix' => 'theme', 'as' => 'them.'], function () {
-        Route::get('list', 'ThemeController@index')->name('list');
-        Route::match(['post','get'], 'remote', 'ThemeController@cmd')->name('cmd');
-    });
-
     $router->group(['prefix' => 'remote', 'as' => 'remote.'], function () {
         Route::match(['post'], '/post/{name}/{method}', 'RemoteDataControler@post')->name('post');
         Route::match(['get'], '/get/{name}', 'RemoteDataControler@get')->name('get');

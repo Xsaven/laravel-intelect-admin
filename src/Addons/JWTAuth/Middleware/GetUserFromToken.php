@@ -32,6 +32,8 @@ class GetUserFromToken extends BaseMiddleware
             return $this->respond('lia.jwt.user_not_found', 'user_not_found', 404);
         }
 
+        \Auth::guard('admin')->login($user);
+
         $this->events->fire('lia.jwt.valid', $user);
 
         return $next($request);
