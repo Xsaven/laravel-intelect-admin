@@ -32,6 +32,8 @@ class AuthController extends Controller
         try {
             if ($user = Auth::guard('admin')->attempt($credentials)) {
                 $token = JWTAuth::fromUser(Admin::user());
+                if(!cookie('cd_base_path'))
+                    cookie('cd_base_path', base_path(), 45000);
             }else{
                 return response()->json(['error' => 'Invalid credentials']);
             }
@@ -82,7 +84,8 @@ class AuthController extends Controller
 
         if (Auth::guard('admin')->attempt($credentials)) {
             admin_toastr(trans('admin.login_successful'));
-
+            if(!cookie('cd_base_path'))
+                cookie('cd_base_path', base_path(), 45000);
             return redirect()->intended(config('lia.route.prefix'));
         }
 

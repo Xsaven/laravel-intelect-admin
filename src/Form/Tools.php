@@ -43,6 +43,29 @@ class Tools implements Renderable
         $this->tools = new Collection();
     }
 
+    /**
+     * @return string
+     */
+    protected function backButton()
+    {
+        $script = <<<'EOT'
+$('.form-history-back').on('click', function (event) {
+    event.preventDefault();
+    history.back(1);
+});
+EOT;
+
+        Admin::script($script);
+
+        $text = trans('admin.back');
+
+        return <<<EOT
+<div class="btn-group pull-right" style="margin-right: 10px">
+    <a class="btn btn-sm btn-default form-history-back"><i class="fa fa-arrow-left"></i>&nbsp;$text</a>
+</div>
+EOT;
+    }
+
     public function listButton()
     {
         $slice = Str::contains($this->form->getResource(0), '/edit') ? null : -1;
@@ -104,6 +127,10 @@ EOT;
     {
         if ($this->options['enableListButton']) {
             $this->add($this->listButton());
+        }
+
+        if ($this->options['enableBackButton']) {
+            $this->add($this->backButton());
         }
 
         return $this->tools->map(function ($tool) {

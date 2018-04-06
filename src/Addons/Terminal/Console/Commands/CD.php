@@ -32,7 +32,7 @@ class CD extends Command implements WebCommand
     {
         parent::__construct();
 
-        $this->cd_connector = new PHPFileSystem(session('cd_base_path'));
+        $this->cd_connector = new PHPFileSystem(cookie('cd_base_path'));
     }
 
     /**
@@ -45,11 +45,11 @@ class CD extends Command implements WebCommand
         $path = $this->argument('path');
         $path = str_replace('//', '/', $path);
         if($path=='/'){
-            session(['cd_base_path' => base_path()]);
+            cookie('cd_base_path', base_path(), 45000);
             $this->info(base_path());
             return true;
         }
-        $root = session('cd_base_path');
+        $root = cookie('cd_base_path');
         if(strrpos($path, "../")!==false){
             $clear = str_replace(base_path(),'',$root);
             $clear = str_replace("\\","",$clear);
@@ -68,7 +68,7 @@ class CD extends Command implements WebCommand
             return true;
         }
         $path = str_replace("\\\\","\\", $path);
-        session(['cd_base_path' => $path]);
+        cookie('cd_base_path', $path, 45000);
         $this->info($path);
     }
 

@@ -83,7 +83,6 @@ class ControllerCreator
                 'title' => $settings->header,
                 'icon' => 'fa-file',
                 'uri' => $settings->link,
-                'type' => 'link'
             ]);
         }
     }

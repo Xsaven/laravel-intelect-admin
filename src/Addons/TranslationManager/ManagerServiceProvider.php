@@ -62,7 +62,7 @@ class ManagerServiceProvider extends ServiceProvider {
         $attributes = [
             'prefix'     => config('lia.route.prefix').'/trans',
             'namespace'  => 'Lia\Addons\TranslationManager',
-            'middleware' => config('lia.route.middleware'),
+            'middleware' => ['api', 'jwt.auth'],
             'as'         => 'trans.'
         ];
 

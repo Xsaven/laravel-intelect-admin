@@ -102,7 +102,8 @@ class LaravelIntelectAdminProvider extends ServiceProvider
             $config = $app['config']['terminal'];
 
             return new Kernel($app[TerminalApplication::class], array_merge($config, [
-                'basePath' => session('cd_base_path'),
+                'basePath' => base_path(),
+                //'basePath' => cookie('cd_base_path'),
                 'environment' => $app->environment(),
                 'version' => $app->version(),
                 'endpoint' => $app['url']->route('terminal.endpoint'),

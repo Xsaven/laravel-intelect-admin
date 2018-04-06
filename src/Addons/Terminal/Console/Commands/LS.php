@@ -36,7 +36,7 @@ class LS extends Command implements WebCommand
     {
         parent::__construct();
 
-        $this->cd_connector = new PHPFileSystem(session('cd_base_path'));
+        $this->cd_connector = new PHPFileSystem(cookie('cd_base_path'));
     }
 
     /**
