@@ -6,6 +6,12 @@ Requirements
  - Laravel >= 5.5.0
  - Fileinfo PHP Extension
 
+Screenshots
+------------
+
+![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img.jpg)
+![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img2.jpg)
+![LIA-Admin](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img3.jpg)
 
 Installation
 ------------
