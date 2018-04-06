@@ -9,9 +9,11 @@ Requirements
 Screenshots
 ------------
 
-![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img.jpg)
-![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img2.jpg)
-![LIA-Admin](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/img3.jpg)
+![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-soft-filemanager.jpg)
+------------
+![LIA-Soft](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-soft-module.jpg)
+------------
+![LIA-Admin](https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/master/docs/screenshot-admin.jpg)
 
 Installation
 ------------
