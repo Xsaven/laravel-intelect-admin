@@ -1,6 +1,7 @@
 * Getting started
   * [Requirements](requirements.md)  
   * [Installation](install.md)
+  * [Downloads](download.md)
   * [Generated files](generated_files.md)
   * [Quick start](quick_start.md)
   * [Page content & Layout](page_content_layout.md)
