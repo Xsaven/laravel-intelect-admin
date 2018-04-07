@@ -29,6 +29,22 @@ class IdeController {
         }
     }
 
+    private function cmdLinkAssetMethod(Request $request, $mod){
+
+        //$dir = public_path($request->module);
+        //if(!\File::isDirectory($dir)) \File::makeDirectory($dir, 0777, true);
+
+        if (file_exists(public_path($mod->getLowerName().'_assets'))) {
+            return response(['status' => 'error', 'message' => 'The "public/'.$mod->getLowerName().'_assets" directory already exists.']);
+        }
+
+        app()->make('files')->link(
+            $mod->getPath().'/Resources/assets', public_path($mod->getLowerName().'_assets')
+        );
+
+        return response(['status' => 'success', 'message' => 'The [public/'.$mod->getLowerName().'_assets] directory has been linked.']);
+    }
+
     private function cmdRunFactoryMethod(Request $request, $mod){
         $model_name = config("modules.namespace").'\\'.$mod->getName().'\\Models\\'.ucfirst($request->model_name);
         if(isset($request->run_factory_num) && is_numeric($request->run_factory_num)){

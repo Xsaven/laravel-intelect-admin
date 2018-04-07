@@ -1,4 +1,19 @@
 <?php
+if (!function_exists('masset')) {
+
+    /**
+     * Get module asset path.
+     *
+     * @param string $path
+     *
+     * @return string
+     */
+    function masset($path)
+    {
+        return \Module::asset($path);
+    }
+}
+
 if (!function_exists('admin_path')) {
 
     /**

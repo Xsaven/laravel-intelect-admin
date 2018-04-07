@@ -23,7 +23,7 @@ use Lia\Addons\Modules\Commands\MigrateRollbackCommand;
 use Lia\Addons\Modules\Commands\MigrateStatusCommand;
 use Lia\Addons\Modules\Commands\MigrationMakeCommand;
 use Lia\Addons\Modules\Commands\ModelMakeCommand;
-use Lia\Addons\Modules\Commands\ModuleMakeCommand;
+//use Lia\Addons\Modules\Commands\ModuleMakeCommand;
 use Lia\Addons\Modules\Commands\NotificationMakeCommand;
 use Lia\Addons\Modules\Commands\PolicyMakeCommand;
 use Lia\Addons\Modules\Commands\ProviderMakeCommand;
@@ -68,7 +68,7 @@ class ConsoleServiceProvider extends ServiceProvider
         RouteProviderMakeCommand::class,
         InstallCommand::class,
         ListCommand::class,
-        ModuleMakeCommand::class,
+        //ModuleMakeCommand::class,
         FactoryMakeCommand::class,
         PolicyMakeCommand::class,
         RequestMakeCommand::class,
