@@ -1,9 +1,8 @@
 <p align="center"><h1>Laravel Intelect Admin.</h1></p>
 <p align="center">
-
-![logo](docs/_media/development.png)
-
+<img src="docs/_media/development.png" alt="LIA-admin">
 </p>
+
 Requirements
 ------------
  - PHP >= 7.1.0
