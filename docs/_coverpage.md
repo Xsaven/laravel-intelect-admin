@@ -1,6 +1,6 @@
-![logo](_media/icon.svg)
+![logo](_media/development.png ':no-zoom')
 
-# docsify <small>3.5</small>
+# LIA-Admin <small>1.0</small>
 
 > A magical documentation site generator.
 
@@ -8,5 +8,6 @@
 * No statically built html files
 * Multiple themes
 
-[GitHub](https://github.com/QingWei-Li/docsify/)
-[Get Started](#docsify)
+[GitHub](https://github.com/Xsaven/laravel-intelect-admin)
+[GitHub](https://github.com/Xsaven/laravel-intelect-admin)
+[Installation](install.md)
