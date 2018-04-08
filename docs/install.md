@@ -54,20 +54,10 @@ class Handler extends ExceptionHandler
 
 }
 ```
- 
+
+------------
+
 !> **Step 3**
-
-Add the disk in you `config/filesystems.php` file:
-```php
-'admin' => [
-    'driver' => 'local',
-    'root' => public_path('uploads'),
-    'visibility' => 'public',
-    'url' => env('APP_URL').'/uploads',
-],
-```
-
-!> **Step 4**
 
 In your `config/app.php`, comment out the original TranslationServiceProvider and add the one from this package:
 ```php
@@ -75,7 +65,9 @@ In your `config/app.php`, comment out the original TranslationServiceProvider an
 'Lia\Addons\TranslationManager\TranslationServiceProvider',
 ```
 
-!> **Step 5**
+------------
+
+!> **Step 4**
 
 You can autoload your modules using `psr-4`. Add the following lines to file `composer.json`:
 

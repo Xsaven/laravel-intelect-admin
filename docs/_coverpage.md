@@ -2,12 +2,10 @@
 
 # LIA-Admin <small>1.0</small>
 
-> A magical documentation site generator.
-
-* Simple and lightweight (~19kB gzipped)
-* No statically built html files
-* Multiple themes
+> Laravel Itnelect Admin + Soft.
 
 [GitHub](https://github.com/Xsaven/laravel-intelect-admin)
-[GitHub](https://github.com/Xsaven/laravel-intelect-admin)
+[Downloads](download.md)
 [Installation](install.md)
+
+![color](#b5e7ff)
