@@ -1,7 +1,7 @@
-# Model-grid #
+# Модель сетки #
 ------------
 
-Class `Lia\Grid` is used to generate tables based on the data model, for example, we have a table movies in database:
+Класс `Lia\Grid` используется для генерации таблиц на основе модели данных, например, у нас есть таблица фильмы в базе данных:
 ```sql
 CREATE TABLE `movies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -16,7 +16,7 @@ CREATE TABLE `movies` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
-And the model of this table is `App\Models\Movie`, The following code can generate the data grid for table `movies`:
+И модель этой таблицы - `App\Models\Movie`. Следующий код может генерировать сетку данных для таблицы `movies`:
 ```php
 use App\Models\Movie;
 use Lia\Grid;
@@ -24,57 +24,57 @@ use Lia\Facades\Admin;
 
 $grid = Admin::grid(Movie::class, function(Grid $grid){
 
-    // The first column displays the id field and sets the column as a sortable column
+    // Первый столбец отображает поле id и устанавливает столбец как сортируемый
     $grid->id('ID')->sortable();
 
-    // The second column shows the title field, because the title field name and the Grid object's title method conflict, so use Grid's column () method instead
+    // Во втором столбце отображается поле заголовка, так как имя поля заголовка и метод заголовка объекта Grid конфликтуют, используем метод column() Grid
     $grid->column('title');
 
-    // The third column shows the director field, which is set by the display($callback) method to display the corresponding user name in the users table
+    // Третий столбец показывает поле director, которое задается методом display($callback) для отображения соответствующего имени пользователя с таблицы пользователей
     $grid->director()->display(function($userId) {
         return User::find($userId)->name;
     });
 
-    // The fourth column appears as the describe field
+    // Четвертый столбец отображается как поле describe
     $grid->describe();
 
-    // The fifth column is displayed as the rate field
+    // Пятый столбец отображается как поле rate
     $grid->rate();
 
-    // The sixth column shows the released field, formatting the display output through the display($callback) method
+    Шестой столбец показывает released поле, форматируя вывод через метод отображения display($callback)
     $grid->released('Release?')->display(function ($released) {
         return $released ? 'yes' : 'no';
     });
 
-    // The following shows the columns for the three time fields
+    // Ниже показаны столбцы для трех временных полей
     $grid->release_at();
     $grid->created_at();
     $grid->updated_at();
 
-    // The filter($callback) method is used to set up a simple search box for the table
+    // Метод filter($callback) используется для настройки простого окна поиска для таблицы
     $grid->filter(function ($filter) {
 
-        // Sets the range query for the created_at field
+        // Устанавливает запрос диапазона для поля created_at
         $filter->between('created_at', 'Created Time')->datetime();
     });
 });
 ```
 
-Basic Usage
+Основное использование
 ------------
 
-#### Add a column ####
+#### Добавить столбец ####
 ```php
-// Add the column directly through the field name `username`
+// Добавить столбец непосредственно для имени поля `username`
 $grid->username('Username');
 
-// The effect is the same as above
+// Эффект такой же, как и выше
 $grid->column('username', 'Username');
 
-// Add multiple columns
+// Добавить несколько столбцов
 $grid->columns('email', 'username' ...);
 ```
-#### Modify the source data ####
+#### Изменение исходных данных ####
 ```php
 $grid->model()->where('id', '>', 100);
 
@@ -82,12 +82,12 @@ $grid->model()->orderBy('id', 'desc');
 
 $grid->model()->take(100);
 ```
-#### Sets the number of lines displayed per page ####
+#### Устанавливает количество строк, отображаемых на странице ####
 ```php
-// The default is 15 per page
+// Значение по умолчанию - 15 на страницу
 $grid->paginate(20);
 ```
-#### Modify the display output of column ####
+#### Изменить вывод столбца ####
 ```php
 $grid->text()->display(function($text) {
     return str_limit($text, 30, '...');
@@ -101,59 +101,59 @@ $grid->email()->display(function ($email) {
     return "mailto:$email";
 });
 
-// column not in table
+// столбца нет в таблице
 $grid->column('column_not_in_table')->display(function () {
     return 'blablabla....';
 });
 ```
-The closure passed to method `display()` is bind to row data object, you can use other column data in current row.
+Закрытие, переданное методу `display()`, является привязкой к объекту данных строки, вы можете использовать другие данные столбца в текущей строке.
 ```php
 $grid->first_name();
 $grid->last_name();
 
-// column not in table
+// столбца нет в таблице
 $grid->column('full_name')->display(function () {
     return $this->first_name.' '.$this->last_name;
 });
 ```
-#### Disable the create button ####
+#### Отключите кнопку добовления ####
 ```php
 $grid->disableCreateButton();
 ```
-#### Disable Pagination ####
+#### Отключить разбиение на страницы ####
 ```php
 $grid->disablePagination();
 ```
-#### Disable data filter ####
+#### Отключить фильтр данных ####
 ```php
 $grid->disableFilter();
 ```
-#### Disable the export button ####
+#### Отключить кнопку экспорта ####
 ```php
 $grid->disableExport();
 ```
-#### Disable row selector ####
+#### Отключить селектор строк ####
 ```php
 $grid->disableRowSelector();
 ```
-#### Disable row actions ####
+#### Отключить действия в строке ####
 ```php
 $grid->disableActions();
 ```
-#### Enable orderable grid ####
+#### Включить настраиваемую сетку ####
 ```php
 $grid->orderable();
 ```
-#### Set options for perPage selector ####
+#### Параметры для селектора perPage ####
 ```php
 $grid->perPages([10, 20, 30, 40, 50]);
 ```
 
-Relation
+Связь
 ------------
 
-#### One to one ####
-The `users` table and the `profiles` table are generated one-to-one relation through the `profiles.user_id` field.
+#### Один к одному ####
+Таблица `users` и таблица `profiles` генерируются взаимно однозначным отношением через поле `profiles.user_id`.
 ```sql
 CREATE TABLE `users` (
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -174,7 +174,7 @@ CREATE TABLE `profiles` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
-The corresponding data model are:
+Соответствующей моделью данных являются:
 ```php
 class User extends Model
 {
@@ -192,7 +192,7 @@ class Profile extends Model
     }
 }
 ```
-You can associate them in a grid with the following code:
+Вы можете связать их в сетке со следующим кодом:
 ```php
 Admin::grid(User::class, function (Grid $grid) {
 
@@ -204,7 +204,7 @@ Admin::grid(User::class, function (Grid $grid) {
     $grid->column('profile.age');
     $grid->column('profile.gender');
 
-    //or
+    //или
     $grid->profile()->age();
     $grid->profile()->gender();
 
@@ -213,8 +213,8 @@ Admin::grid(User::class, function (Grid $grid) {
 });
 ```
 
-#### One to many ####
-The `posts` and `comments` tables generate a one-to-many association via the `comments.post_id` field
+#### Один ко многим ####
+Таблицы `posts` и `comments` генерируют ассоциацию «один ко многим» через поле `comments.post_id`
 ```sql
 CREATE TABLE `posts` (
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -234,7 +234,7 @@ CREATE TABLE `comments` (
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
-The corresponding data model are:
+Соответствующей моделью данных являются:
 ```php
 class Post extends Model
 {
@@ -252,7 +252,7 @@ class Comment extends Model
     }
 }
 ```
-You can associate them in a grid with the following code:
+Вы можете связать их в сетке со следующим кодом:
 ```php
 return Admin::grid(Post::class, function (Grid $grid) {
     $grid->id('id')->sortable();
@@ -278,8 +278,8 @@ return Admin::grid(Comment::class, function (Grid $grid) {
     $grid->updated_at();
 });
 ```
-#### Many to many ####
-The `users` and `roles` tables produce a many-to-many relationship through the pivot table `role_user`
+#### Многие ко многим ####
+Таблицы `users` и `role` производят отношения «многие ко многим» через сводную таблицу `role_user`
 ```sql
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -310,7 +310,7 @@ CREATE TABLE `role_users` (
   KEY `role_users_role_id_user_id_index` (`role_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 ```
-The corresponding data model are:
+Соответствующей моделью данных являются:
 ```php
 class User extends Model
 {
@@ -328,7 +328,7 @@ class Role extends Model
     }
 }
 ```
-You can associate them in a grid with the following code:
+Вы можете связать их в сетке со следующим кодом:
 ```php
 return Admin::grid(User::class, function (Grid $grid) {
     $grid->id('ID')->sortable();

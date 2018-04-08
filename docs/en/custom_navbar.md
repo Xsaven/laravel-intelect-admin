@@ -13,7 +13,7 @@ Admin::navbar(function (\Lia\Widgets\Navbar $navbar) {
 
 });
 ```
-method `left` nad `right` is used to add the contents of the left and right sides of the head, the method parameters can be any object can be rendered( objects which impletements `Htmlable`, `Renderable`, or has method `__toString()`) or strings.
+method `left` and `right` is used to add the contents of the left and right sides of the head, the method parameters can be any object can be rendered( objects which impletements `Htmlable`, `Renderable`, or has method `__toString()`) or strings.
 
 Add elements to the left
 ------------

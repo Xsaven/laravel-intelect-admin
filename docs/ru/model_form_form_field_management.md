@@ -1,11 +1,11 @@
-# Fields management #
+# Управление полем формы #
 ------------
 
-Remove field
+Удалить поле
 ------------
-The built-in `map` and `editor` fields requires the front-end files via cdn, and if there are problems with the network, they can be removed in the following ways
+Для встроенных полей `map` и` editor` требуются файлы front-end через cdn, и если есть проблемы с сетью, их можно удалить следующими способами
 
-Locate the file `app/Admin/bootstrap.php`. If the file does not exist, update `LIA-admin` and create this file.
+Найдите файл `app/Admin/bootstrap.php`. Если файл не существует, обновите `LIA-admin` и создайте этот файл.
 ```php
 <?php
 
@@ -18,17 +18,17 @@ Form::forget('editor');
 
 Form::forget(['map', 'editor']);
 ```
-This removes the two fields, which can be used to remove the other fields.
+Это удаляет два поля, метод можно использовать для удаления других полей.
 
-Extend the custom field
+Добовление пользовательского поля
 ------------
-Extend a PHP code editor based on [codemirror](http://codemirror.net/index.html) with the following steps.
+Добавте редактор кода PHP на основе [codemirror](http://codemirror.net/index.html) со следующими шагами.
 
-see [PHP mode](http://codemirror.net/mode/php/).
+см. [PHP mode](http://codemirror.net/mode/php/).
 
-Download and unzip the [codemirror](http://codemirror.net/codemirror.zip) library to the front-end resource directory, for example, in the directory `public/packages/codemirror-5.20.2`.
+Загрузите и распакуйте [codemirror](http://codemirror.net/codemirror.zip) библиотеку в каталог ресурсов интерфейса, например, в каталог `public/packages/codemirror-5.20.2`.
 
-Create a new field class `app/Admin/Extensions/PHPEditor.php`:
+Создайте новый класс поля `app/Admin/Extensions/PHPEditor.php`:
 ```php
 <?php
 
@@ -75,9 +75,9 @@ EOT;
     }
 }
 ```
->Static resources in the class can also be imported from outside, see [Editor.php](https://github.com/Xsaven/laravel-intelect-admin/blob/master/src/Form/Field/Editor.php)
+>Статические ресурсы в классе также могут быть импортированы извне, см. [Editor.php](https://github.com/Xsaven/laravel-intelect-admin/blob/master/src/Form/Field/Editor.php)
 
-Create a view file `resources/views/admin/php-editor.blade.php`:
+Создайте файл вида `resources/views/admin/php-editor.blade.php`:
 ```blade
 <div class="form-group {!! !$errors->has($label) ?: 'has-error' !!}">
 
@@ -91,7 +91,7 @@ Create a view file `resources/views/admin/php-editor.blade.php`:
     </div>
 </div>
 ```
-Finally, find the file `app/Admin/bootstrap.php`, if the file does not exist, update `LIA-admin`, and then create this file, add the following code:
+Наконец, найдите файл `app/Admin/bootstrap.php`, если файл не существует, обновите `LIA-admin`, а затем создайте этот файл, добавьте следующий код:
 ```php
 <?php
 
@@ -100,19 +100,19 @@ use Lia\Form;
 
 Form::extend('php', PHPEditor::class);
 ```
-And then you can use PHP editor in [model-form](model_form/basic_usage.md):
+И тогда вы можете использовать PHP-редактор в [Модель формы](/ru/model_form_basic_usage.md):
 ```php
 $form->php('code');
 ```
-In this way, you can add any form fields you want to add.
+Таким образом, вы можете добавить любые поля формы, которые вы хотите добавить.
 
-Integrate CKEditor
+Интеграция CKEditor
 ------------
-Here is another example to show you how to integrate ckeditor.
+Вот еще один пример, чтобы показать вам, как интегрировать ckeditor.
 
-At first download [CKEditor](http://ckeditor.com/download), unzip to public directory, for example `public/packages/ckeditor/`.
+Сначала скачать [CKEditor](http://ckeditor.com/download), разархивировать в общий каталог, например `public/packages/ckeditor/`.
 
-Then Write Extension class `app/Admin/Extensions/Form/CKEditor.php`:
+Затем напишите класс расширения `app/Admin/Extensions/Form/CKEditor.php`:
 ```php
 <?php
 
@@ -137,7 +137,7 @@ class CKEditor extends Field
     }
 }
 ```
-Add blade file `resources/views/admin/ckeditor.blade.php` for view `admin.ckeditor` :
+Создайте файл вида `resources/views/admin/ckeditor.blade.php` - `admin.ckeditor` :
 ```blade
 <div class="form-group {!! !$errors->has($errorKey) ?: 'has-error' !!}">
 
@@ -154,14 +154,14 @@ Add blade file `resources/views/admin/ckeditor.blade.php` for view `admin.ckedit
     </div>
 </div>
 ```
-Register this extension in `app/Admin/bootstrap.php`:
+Зарегистрируйте это расширение в `app/Admin/bootstrap.php`:
 ```php
 use Lia\Form;
 use App\Admin\Extensions\Form\CKEditor;
 
 Form::extend('ckeditor', CKEditor::class);
 ```
-After this you can use ckeditor in your form:
+После этого вы можете использовать ckeditor в своей форме:
 ```php
 $form->ckeditor('content');
 ```

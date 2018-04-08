@@ -334,7 +334,7 @@ $form->rate($column, $label);
 ```
 Image upload
 ------------
-Before use upload field, you must complete upload configuration, see [image/file upload](model_form/file_image_upload.md).
+Before use upload field, you must complete upload configuration, see [image/file upload](/en/model_form_file_image_upload.md).
 
 You can use compression, crop, add watermarks and other methods, please refer to [Intervention](http://image.intervention.io/getting_started/introduction), picture upload directory in the file `config/lia.php` `Upload.image` configuration, if the directory does not exist, you need to create the directory and open write permissions:
 ```php
@@ -354,7 +354,7 @@ $form->image($column, $label)->removable();
 ```
 File upload
 ------------
-Before use upload field, you must complete upload configuration, see [image/file upload](model_form/file_image_upload.md).
+Before use upload field, you must complete upload configuration, see [image/file upload](/en/model_form_file_image_upload.md).
 
 The file upload directory is configured in `upload.file` in the file `config/lia.php`. If the directory does not exist, it needs to be created and write-enabled.
 ```php
@@ -399,9 +399,9 @@ Of course, you can also specify any other format.
 
 Map
 ------------
-The map field refers to the network resource, and if there is a problem with the network refer to [form Component Management](model_form/form_field_management.md) to remove the component.
+The map field refers to the network resource, and if there is a problem with the network refer to [form Component Management](/en/model_form_form_field_management.md) to remove the component.
 
-Used to select the latitude and longitude, `$latitude`, `$longitude` for the latitude and longitude field, using Tencent map when `locale` set of laravel `iszh_CN`, otherwise use Google Maps:
+Used to select the latitude and longitude, `$latitude`, `$longitude` for the latitude and longitude field, using Google Maps:
 ```php
 $form->map($latitude, $longitude, $label);
 
@@ -421,7 +421,7 @@ More options please ref to [https://github.com/IonDen/ion.rangeSlider#settings](
 
 Rich text editor
 ------------
-The editor field refers to the network resource, and if there is a problem with the network refer to [form Component Management](model_form/form_field_management.md) to remove the component.
+The editor field refers to the network resource, and if there is a problem with the network refer to [form Component Management](/en/model_form_form_field_management.md) to remove the component.
 ```php
 $form->editor($column, $label);
 ```

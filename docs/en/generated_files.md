@@ -16,6 +16,6 @@ After install, you can find directory `app/Admin`, and then most of our develop 
 ```
 `app/Admin/routes.php` is used to define routes.
 
-`app/Admin/bootstrap.php` is bootstrapper for laravel-admin, more usages see comments inside it.
+`app/Admin/bootstrap.php` is `bootstrapper` for `LIA-admin`, more usages see comments inside it.
 
 The `app/Admin/Controllers` directory is used to store all the controllers, The `HomeController.php` file under this directory is used to handle home request of admin.

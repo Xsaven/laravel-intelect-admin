@@ -88,7 +88,6 @@ $infoBox = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
 
 echo $infoBox->render();
 ```
-Refer to the section on the `InfoBox` in the `index()` method of the home page layout file [HomeController.php](https://github.com/Xsaven/laravel-intelect-admin/blob/master/src/Console/stubs/HomeController.stub).
 
 Tab component
 ------------
@@ -108,7 +107,7 @@ The `Tab::add($title, $content)` method is used to add a tab, `$title` for the o
 
 Table
 ------------
-`Lia\Widgets\Table` class is used to generate forms：
+`Lia\Widgets\Table` class is used to generate tables：
 ```php
 use Lia\Widgets\Table;
 

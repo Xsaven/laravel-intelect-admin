@@ -1,7 +1,7 @@
 # File/Image upload #
 ------------
 
-[model-form](model_form/basic_usage.md) can build file and image upload field with following codes
+[model-form](/en/model_form_basic_usage.md) can build file and image upload field with following codes
 ```php
 $form->file('file_column');
 $form->image('image_column');
@@ -19,7 +19,7 @@ $form->image('picture')->name(function ($file) {
     return 'test.'.$file->guessExtension();
 });
 ```
-[model-form](model_grid/basic_usage.md) both support for local and cloud storage upload
+[model-form](/en/model_grid_basic_usage.md) both support for local and cloud storage upload
 
 #### Upload to local ####
 first add storage configuration, add a disk in `config/filesystems.php`:

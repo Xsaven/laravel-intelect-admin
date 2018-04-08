@@ -59,7 +59,7 @@ class Handler extends ExceptionHandler
 
 !> **Step 3**
 
-In your `config/app.php`, comment out the original TranslationServiceProvider and add the one from this package:
+In your `config/app.php`, comment out the original `TranslationServiceProvider` and add the one from this package:
 ```php
 //'Illuminate\Translation\TranslationServiceProvider',
 'Lia\Addons\TranslationManager\TranslationServiceProvider',
@@ -69,7 +69,7 @@ In your `config/app.php`, comment out the original TranslationServiceProvider an
 
 !> **Step 4**
 
-You can autoload your modules using `psr-4`. Add the following lines to file `composer.json`:
+To load modules using `psr-4`. Add the following lines in the file `composer.json`:
 
 ``` json
 {
@@ -84,4 +84,4 @@ You can autoload your modules using `psr-4`. Add the following lines to file `co
 
 !> **Tip: don't forget to run `composer dump-autoload` afterwards.**
 
->Open http://localhost/admin/ in browser,use username admin and password admin to login.
+>Open `http://localhost/admin/` in browser,use username `admin` and password `admin` to login.

@@ -1,18 +1,18 @@
-# Custom chart #
+# Пользовательская диаграмма #
 ------------
 
-If you want to add chart components to the page, you can refer to the following process
+Если вы хотите добавить компоненты диаграммы на страницу, вы можете обратиться к следующему процессу
 
-Use `chartjs` for example, first download [chartjs](http://chartjs.org/), put it under the public directory, such as in the `public/vendor/chartjs` directory
+Например, используйте `chartjs`, сначала загрузите [chartjs](http://chartjs.org/), поместите его в общий каталог, например, в каталог `public/vendor/chartjs`
 
-Then import the component in `app/Admin/bootstrap.php`:
+Затем импортируйте компонент в `app/Admin/bootstrap.php`:
 ```php
 use Lia\Facades\Admin;
 
 Admin::js('/vendor/chartjs/dist/Chart.min.js');
 ```
 
-Create a new view file `resources/views/admin/charts/bar.blade.php`
+Создайте новый файл вида `resources/views/admin/charts/bar.blade.php`
 ```blade
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
@@ -57,7 +57,7 @@ $(function () {
 });
 </script>
 ```
-And then you can introduce this chart view anywhere on the page:
+И тогда вы можете ввести этот вид диаграммы в любом месте страницы:
 ```php
 public function index()
 {
@@ -70,4 +70,4 @@ public function index()
     });
 }
 ```
-In the above way you can introduce any chart library. multi-chart page layout, refer to [view layout](page_content_layout.md)
+Таким образом вы можете представить любую библиотеку. макет страницы, см. [Страница & Макет](/ru/page_content_layout.md)

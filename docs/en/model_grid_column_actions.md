@@ -53,7 +53,7 @@ Quickly turn a column into a switch component using the following methods:
 ```php
 $grid->status()->switch();
 
-// set the `text`、`color`、and `value`
+// set the `text`,`color`, and `value`
 $states = [
     'on'  => ['value' => 1, 'text' => 'YES', 'color' => 'primary'],
     'off' => ['value' => 2, 'text' => 'NO', 'color' => 'default'],
@@ -121,7 +121,7 @@ $grid->pictures()->display(function ($pictures) {
 ```php
 $grid->name()->label();
 
-//Set color,defaults to `success`, other options `danger`,`warning`,`info`,`primary`,`default`,`success`
+//Set color, defaults to `success`, other options `danger`,`warning`,`info`,`primary`,`default`,`success`
 $grid->name()->label('danger');
 
 // can handle a array
@@ -131,7 +131,7 @@ $grid->keywords()->label();
 ```php
 $grid->name()->badge();
 
-//Set color,defaults to `success`, other options `danger`,`warning`,`info`,`primary`,`default`,`success`
+//Set color, defaults to `success`, other options `danger`,`warning`,`info`,`primary`,`default`,`success`
 $grid->name()->badge('danger');
 
 // can handle a array

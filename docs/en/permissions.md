@@ -113,7 +113,7 @@ Route::group([
 
 });
 
-// User has permission `edit-post`、`create-post` and `delete-post` can access routes under group.
+// User has permission `edit-post`,`create-post` and `delete-post` can access routes under group.
 Route::group([
     'middleware' => 'admin.permission:check,edit-post,create-post,delete-post',
 ], function ($router) {
