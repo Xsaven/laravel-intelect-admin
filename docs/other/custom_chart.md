@@ -57,3 +57,17 @@ $(function () {
 });
 </script>
 ```
+And then you can introduce this chart view anywhere on the page:
+```php
+public function index()
+{
+    return Admin::content(function (Content $content) {
+
+        $content->header('chart');
+        $content->description('.....');
+
+        $content->body(view('admin.charts.bar'));
+    });
+}
+```
+In the above way you can introduce any chart library. multi-chart page layout, refer to [view layout](page_content_layout.md)
