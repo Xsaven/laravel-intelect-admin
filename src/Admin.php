@@ -228,7 +228,9 @@ class Admin
 
     public function adminVariables(){
         $routeCollection = \Route::getRoutes(); $routes = []; foreach ($routeCollection as $value) { if(!empty($value->getName())) $routes[$value->getName()] = str_replace('?','',$value->uri()); }
+        $routes_web = []; foreach ($routeCollection as $value) { if(array_search('GET', $value->methods())!==false) $routes_web[] = $value->uri(); }
         $cfg = [
+            'routes_web'    => $routes_web,
             'routList'      => $routes,
             'admin'         => $this->user()->toArray(),
             '__'            => trans('admin'),

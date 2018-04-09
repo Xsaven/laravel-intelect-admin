@@ -32,4 +32,5 @@ Route::group($attributes, function ($router) {
         Route::post('/endpoint', 'TerminalController@endpoint')->name('endpoint');
     });
 
+    Route::get('soft', 'SoftController@index')->name('soft');
 });
