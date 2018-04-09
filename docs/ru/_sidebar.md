@@ -32,3 +32,23 @@
 * [Пользовательская проверка](/ru/custom_authentication.md)
 * [Пользовательский Navbar](/ru/custom_navbar.md)
 * [Пользовательская диаграмма](/ru/custom_chart.md)
+* [Помощники](/ru/helpers.md)
+
+* Модули (Основное использование)
+
+  * [Информация](/ru/modules.md)
+  * [Быстрый пример](/ru/module_quick_example.md)
+  * [Создание модуля](/ru/module_creating_a_module.md)
+  * [Пространства имен](/ru/module_namespaces.md)
+  * [Конфигурация](/ru/module_configuration.md)
+  * [Laravel Mix](/ru/module_compiling_assets.md)
+  
+* Модули (Инструменты)
+  
+  * [Команды Artisan](/ru/module_artisan_commands.md)
+  * [Фасадные методы](/ru/module_facade_methods.md)
+  * [Методы модулей](/ru/module_methods.md)
+  * [Ресурсы модулей](/ru/module_resources.md)
+  * [Команды консоли модуля](/ru/module_console_commands.md)
+  * [Регистрация событий модуля](/ru/module_registering_events.md)
+  * [Издательские модули](/ru/module_publishing.md)

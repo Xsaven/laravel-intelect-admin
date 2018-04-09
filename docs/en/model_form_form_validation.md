@@ -26,4 +26,4 @@ If you want to allow the field to be empty, first in the database table to face 
 ```php
 $form->text('title')->rules('nullable');
 ```
-Please refer to the more rules [Validation](https://laravel.com/docs/5.6/validation).
+Please refer to the more rules [Validation](https://laravel.com/docs/validation).

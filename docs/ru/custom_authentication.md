@@ -53,7 +53,7 @@ interface Authenticatable {
 
 }
 ```
-Подробнее о пользовательской аутентификации см. В разделе [adding-custom-user-providers](https://laravel.com/docs/5.6/authentication#adding-custom-user-providers)
+Подробнее о пользовательской аутентификации см. В разделе [adding-custom-user-providers](https://laravel.com/docs/authentication#adding-custom-user-providers)
 
 После создания пользовательского провайдера вам необходимо будет расширить Laravel:
 ```php

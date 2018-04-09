@@ -97,6 +97,19 @@ if (!function_exists('admin_asset')) {
     }
 }
 
+if (!function_exists('admin_vendor_asset')) {
+
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function admin_vendor_asset($path)
+    {
+        return asset('vendor/lia/'.trim($path, '/'), config('lia.secure'));
+    }
+}
+
 if (! function_exists('module_path')) {
     function module_path($name)
     {

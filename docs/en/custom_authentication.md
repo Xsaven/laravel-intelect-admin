@@ -53,7 +53,7 @@ interface Authenticatable {
 
 }
 ```
-More details about custom authentication please refer to [adding-custom-user-providers](https://laravel.com/docs/5.6/authentication#adding-custom-user-providers)
+More details about custom authentication please refer to [adding-custom-user-providers](https://laravel.com/docs/authentication#adding-custom-user-providers)
 
 After you created cusom user provider, you will need to extend Laravel with it:
 ```php

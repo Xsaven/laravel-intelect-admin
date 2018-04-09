@@ -10,7 +10,7 @@
 composer require xsaven/laravel-intelect-admin
 ```
 
-Затем запустите эти команды для публикации активов и конфигурации:
+Затем запустите эти команды для публикации активов и конфигураций:
 ```
 php artisan vendor:publish --provider="Lia\LaravelIntelectAdminProvider"
 ```

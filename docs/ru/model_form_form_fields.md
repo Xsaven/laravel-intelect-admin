@@ -162,7 +162,7 @@ class Post extends Models
 
 $form->multipleSelect('tags')->options(Tag::all()->pluck('name', 'id'));
 ```
-Второй - сохранить массив параметров в одно поле. Если поле является строковым типом, необходимо определить [accessor and Mutator](https://laravel.com/docs/5.6/eloquent-mutators) for the field.
+Второй - сохранить массив параметров в одно поле. Если поле является строковым типом, необходимо определить [accessor and Mutator](https://laravel.com/docs/eloquent-mutators) for the field.
 
 Если у вас слишком много опций, вы можете загрузить опцию с помощью ajax
 ```php

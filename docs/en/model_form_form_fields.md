@@ -162,7 +162,7 @@ class Post extends Models
 
 $form->multipleSelect('tags')->options(Tag::all()->pluck('name', 'id'));
 ```
-The second is to store the option array into a single field. If the field is a string type, it is necessary to define [accessor and Mutator](https://laravel.com/docs/5.6/eloquent-mutators) for the field.
+The second is to store the option array into a single field. If the field is a string type, it is necessary to define [accessor and Mutator](https://laravel.com/docs/eloquent-mutators) for the field.
 
 If have too many options, you can load option by ajax
 ```php

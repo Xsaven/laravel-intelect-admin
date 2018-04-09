@@ -26,4 +26,4 @@ $form->text('code')->rules('required|regex:/^\d+$/|min:10', [
 ```php
 $form->text('title')->rules('nullable');
 ```
-См. Дополнительные правила [Validation](https://laravel.com/docs/5.6/validation).
+См. Дополнительные правила [Validation](https://laravel.com/docs/validation).
