@@ -6,6 +6,6 @@
 
 [GitHub](https://github.com/Xsaven/laravel-intelect-admin)
 [Downloads](/en/download.md)
-[Installation](/en/install.md)
+[Documentation](/en/)
 
 ![color](#b5e7ff)
