@@ -1,5 +1,5 @@
 * Getting started
-  * [Requirements](/en/requirements.md)  
+
   * [Installation](/en/install.md)
   * [Downloads](/en/download.md)
   * [Generated files](/en/generated_files.md)

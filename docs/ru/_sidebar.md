@@ -1,5 +1,5 @@
 * Для начала
-  * [Требования](/ru/requirements.md)  
+ 
   * [Установка](/ru/install.md)
   * [Загрузки](/ru/download.md)
   * [Сгенерированные файлы](/ru/generated_files.md)
