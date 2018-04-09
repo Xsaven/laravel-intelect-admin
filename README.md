@@ -1,6 +1,6 @@
 <p align="center"><h1>Laravel Intelect Admin.</h1></p>
 <p align="center">
-<img src="docs/_media/development.png" alt="LIA-admin">
+<img src="https://raw.githubusercontent.com/Xsaven/laravel-intelect-admin/a8e141ee5b7a0403e67c465a092cd04da8de7f67/docs/_media/development.png" alt="LIA-admin">
 </p>
 
 <p align="center">
