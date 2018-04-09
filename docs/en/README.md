@@ -10,7 +10,7 @@
     <a href="https://github.com/Xsaven/laravel-intelect-admin" target="_blanck">
         <img src="https://img.shields.io/travis/php-v/symfony/symfony.svg?style=flat-square" alt="PHP" style="width:auto;" data-no-zoom>
     </a>
-    <a href="https://github.com/Xsaven/laravel-intelect-admin" target="_blanck">
+    <a href="https://github.com/Xsaven/laravel-intelect-admin/stargazers" target="_blanck">
         <img src="https://img.shields.io/github/stars/Xsaven/laravel-intelect-admin.svg?style=flat-square&label=GitHub Stars" alt="GitHub Stars" style="width:auto;" data-no-zoom>
     </a>
     <a href="https://packagist.org/packages/xsaven/laravel-intelect-admin" target="_blanck">
