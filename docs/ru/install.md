@@ -82,6 +82,6 @@ class Handler extends ExceptionHandler
 }
 ```
 
-!> **Совет: Не забудьте запустить `comper dump-autoload`**
+!> **Совет: Не забудьте запустить `composer dump-autoload`**
 
 >Откройте `http://localhost/admin/` в браузере, используйте имя пользователя `admin` и пароль` admin` для входа.
