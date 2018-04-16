@@ -1,6 +1,6 @@
 <?php
 
-namespace Lia\Displayers;
+namespace Lia\Grid\Displayers;
 
 use Illuminate\Contracts\Support\Arrayable;
 
