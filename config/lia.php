@@ -155,6 +155,11 @@ return [
     'version' => '1.0',
 
     /*
+     * Show documentation link in footer
+     */
+    'show_doc' => true,
+
+    /*
      * Settings for extensions.
      */
     'extensions' => [
