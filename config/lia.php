@@ -160,6 +160,11 @@ return [
     'show_doc' => true,
 
     /*
+     * Show web site link in header
+     */
+    'header_web_site_link' => true,
+
+    /*
      * Settings for extensions.
      */
     'extensions' => [

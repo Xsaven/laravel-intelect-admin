@@ -131,7 +131,7 @@ class Scheduling
     }
 
     /**
-     * Register routes for laravel-admin.
+     * Register routes for LIA.
      *
      * @return void
      */

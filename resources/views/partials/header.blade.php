@@ -24,6 +24,15 @@
 
                 {!! Admin::getNavbar()->render() !!}
 
+                @if(config('lia.header_web_site_link'))
+                    <li>
+                        <a href="{{request()->server("REQUEST_SCHEME")}}://{{request()->server('HTTP_HOST')}}/" target="_blank">
+                            <span class="label label-success"></span>
+                            Web site <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                @endif
+
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
