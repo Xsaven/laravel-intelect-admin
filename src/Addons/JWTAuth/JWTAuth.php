@@ -191,7 +191,7 @@ class JWTAuth
     {
         if (! $token = $this->parseAuthHeader($header, $method)) {
             if (! $token = $this->request->{$query}) {
-                if (! $token = $this->request->header('Authorization')) {
+                if (! $token = $this->request->header('Token')) {
                     throw new JWTException('The token could not be parsed from the request', 400);
                 }
             }
