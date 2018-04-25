@@ -17,6 +17,8 @@ $box->style('info');
 
 $box->solid();
 
+$box->addTool('<a class="btn btn-sm"><i class="fa fa-home"></i></a>');
+
 echo $box;
 ```
 The `$content` parameter is the content element of the Box, which can be either an implementation of the `Illuminate\Contracts\Support\Renderable` interface, or other printable variables.
@@ -32,6 +34,8 @@ The `Box::collapsable()` method sets the Box component as collapsable.
 `Box::style($style)` method sets the style of the Box component to fill in `primary`,`info`,`danger`,`warning`,`success`,`default`.
 
 The `Box::solid()` method adds a border to the Box component.
+
+The `Box::addTool()` adds html to the toolbox of the Box component.
 
 Collapse
 ------------

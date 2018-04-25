@@ -77,6 +77,19 @@ class Box extends Widget implements Renderable
         return $this;
     }
 
+
+    /**
+     * Adds html to the toolbox of the Box component.
+     *
+     * @return $this
+     */
+    public function addTool($html = '')
+    {
+        $this->tools[] = $html;
+
+        return $this;
+    }
+
     /**
      * Set box as collapsable.
      *

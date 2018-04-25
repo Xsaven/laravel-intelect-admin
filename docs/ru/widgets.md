@@ -17,6 +17,8 @@ $box->style('info');
 
 $box->solid();
 
+$box->addTool('<a class="btn btn-sm"><i class="fa fa-home"></i></a>');
+
 echo $box;
 ```
 Параметр `$content` - это элемент содержимого поля, который может быть либо реализацией интерфейса `Illuminate\Contracts\Support\Renderable`, либо других печатаемых переменных.
@@ -32,6 +34,8 @@ echo $box;
 Метод `Box::style($style)` задает стиль компонента Box для заполнения `primary`, `info`, `danger`, `warning`, `success`, `default`.
 
 Метод `Box::solid()` добавляет границы к компоненту Box.
+
+Метод `Box::addTool()` добавляет html в область инструментов компонента Box.
 
 Collapse
 ------------
