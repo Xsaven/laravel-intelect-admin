@@ -81,9 +81,9 @@ Create a view file `resources/views/admin/php-editor.blade.php`:
 ```blade
 <div class="form-group {!! !$errors->has($label) ?: 'has-error' !!}">
 
-    <label for="{{$id}}" class="col-sm-2 control-label">{{$label}}</label>
+    <label for="{{$id}}" class="{{$viewClass['label']}} control-label">{{$label}}</label>
 
-    <div class="col-sm-6">
+    <div class="{{$viewClass['field']}}">
 
         @include('admin::form.error')
 
