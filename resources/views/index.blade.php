@@ -16,7 +16,11 @@
 
     {!! Admin::css() !!}
     <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/laravel-admin/laravel-admin.css") }}">
-    <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/nprogress/nprogress.css") }}">
+    @if(config('lia.layout')[0]=='fixed')
+        <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/nprogress/fixed-nprogress.css") }}">
+    @else
+        <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/nprogress/nprogress.css") }}">
+    @endif
     <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/sweetalert/dist/sweetalert.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/nestable/nestable.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("/vendor/lia/toastr/build/toastr.min.css") }}">
