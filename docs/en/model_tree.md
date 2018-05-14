@@ -93,6 +93,37 @@ class CategoryController extends Controller
     }
 }
 ```
+Control buttons `Модель-tree`
+```php
+<?php
+
+namespace App\Admin\Controllers\Demo;
+
+use App\Http\Controllers\Controller;
+use App\Models\Category;
+use Lia\Form;
+use Lia\Facades\Admin;
+use Lia\Layout\Content;
+use Lia\Controllers\ModelForm;
+use Lia\Tree;
+
+class CategoryController extends Controller
+{
+    use ModelForm;
+
+    public function index()
+    {
+        return Admin::content(function (Content $content) {
+            $content->header('Categories');
+            $content->body(Category::tree(function(Tree $tree){
+                $tree->disableCreate(); //Disable the "Create" button
+                $tree->disableSave(); //Disable the "Save" button
+                $tree->disableRefresh(); //Disable the "Restart" button
+            }));
+        });
+    }
+}
+```
 You can modify the display of branch in the following ways:
 ```php
 Category::tree(function ($tree) {

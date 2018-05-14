@@ -93,6 +93,37 @@ class CategoryController extends Controller
     }
 }
 ```
+Кнопки управления `Модель-tree`
+```php
+<?php
+
+namespace App\Admin\Controllers\Demo;
+
+use App\Http\Controllers\Controller;
+use App\Models\Category;
+use Lia\Form;
+use Lia\Facades\Admin;
+use Lia\Layout\Content;
+use Lia\Controllers\ModelForm;
+use Lia\Tree;
+
+class CategoryController extends Controller
+{
+    use ModelForm;
+
+    public function index()
+    {
+        return Admin::content(function (Content $content) {
+            $content->header('Categories');
+            $content->body(Category::tree(function(Tree $tree){
+                $tree->disableCreate(); //Отключить кнопку "Создать"
+                $tree->disableSave(); //Отключить кнопку "Сохранить"
+                $tree->disableRefresh(); //Отключить кнопку "Перезагрузить"
+            }));
+        });
+    }
+}
+```
 Вы можете изменить отображение ветви следующими способами:
 ```php
 Category::tree(function ($tree) {
