@@ -93,9 +93,8 @@ class CategoryController extends Controller
     }
 }
 ```
-Control buttons `Модель-tree`
+Control buttons
 ```php
-<?php
 Category::tree(function(Tree $tree){
     $tree->disableCreate(); //Disable the "Create" button
     $tree->disableSave(); //Disable the "Save" button

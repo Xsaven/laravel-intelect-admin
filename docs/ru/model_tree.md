@@ -93,9 +93,8 @@ class CategoryController extends Controller
     }
 }
 ```
-Кнопки управления `Модель-tree`
+Кнопки управления
 ```php
-<?php
 Category::tree(function(Tree $tree){
     $tree->disableCreate(); //Отключить кнопку "Создать"
     $tree->disableSave(); //Отключить кнопку "Сохранить"
