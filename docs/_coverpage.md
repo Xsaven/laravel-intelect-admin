@@ -17,7 +17,9 @@
     <a href="https://packagist.org/packages/xsaven/laravel-intelect-admin" target="_blanck">
         <img src="https://img.shields.io/packagist/l/xsaven/laravel-intelect-admin.svg?style=flat-square" alt="Packagist" style="width:auto;" data-no-zoom>
     </a>
-</div>
+</p>
+
+<p align="center"><a href="https://beerpay.io/Xsaven/laravel-intelect-admin"><img src="https://beerpay.io/Xsaven/laravel-intelect-admin/badge.svg" /></a></p>
 
 
 [GitHub](https://github.com/Xsaven/laravel-intelect-admin)
