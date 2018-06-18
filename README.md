@@ -31,3 +31,8 @@ Installation
 License
 ------------
 `Laravel Intelect Admin` is licensed under [The MIT License (MIT)](LICENSE).
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/Xsaven/laravel-intelect-admin/badge.svg?style=beer-square)](https://beerpay.io/Xsaven/laravel-intelect-admin)  [![Beerpay](https://beerpay.io/Xsaven/laravel-intelect-admin/make-wish.svg?style=flat-square)](https://beerpay.io/Xsaven/laravel-intelect-admin?focus=wish)
