@@ -17,6 +17,7 @@ class LaravelIntelectAdminProvider extends ServiceProvider
         'Lia\Console\InstallCommand',
         'Lia\Console\UninstallCommand',
         'Lia\Console\ImportCommand',
+        'Lia\Console\System\EnvCommand',
     ];
 
     /**
