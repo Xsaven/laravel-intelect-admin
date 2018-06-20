@@ -32,18 +32,16 @@ class EnvCommand extends Command
         $value = $this->argument('value');
 
         if(env($field))
-
             file_put_contents($this->laravel->environmentFilePath(), preg_replace(
                 $this->keyReplacementPattern($field, env($field)),
                 $field.'='.(strpos($value, ' ') !== false || strpos($value, '${') !== false ? "\"{$value}\"" : $value),
                 file_get_contents($this->laravel->environmentFilePath())
             ));
-
         else
-
             file_put_contents($this->laravel->environmentFilePath(), file_get_contents($this->laravel->environmentFilePath())."\n".
                 $field.'='.(strpos($value, ' ') !== false || strpos($value, '${') !== false ? "\"{$value}\"" : $value));
 
+        putenv($field.'='.(strpos($value, ' ') !== false || strpos($value, '${') !== false ? "\"{$value}\"" : $value));
 
         $this->info($this->laravel->environmentFilePath() . ' - Updated!');
     }
